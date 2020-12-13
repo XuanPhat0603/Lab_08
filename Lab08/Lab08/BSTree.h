@@ -15,7 +15,8 @@ struct TreeNode
 	TreeNode(int data, TreeNode* l, TreeNode* r)
 	:m_data(data), m_left(l), m_right(r) {}
 };
-class BSTree {
+class BSTree
+{
 private:
 	TreeNode* m_root;
 	TreeNode* findKey(TreeNode*, int);

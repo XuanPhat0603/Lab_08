@@ -9,8 +9,10 @@ TreeNode* BSTree::findKey(TreeNode* n, int key)
 		return findKey(n->m_right, key);
 	return n;
 }
-void BSTree::addKey(TreeNode*& n, int key) {
-	if (!n) {
+void BSTree::addKey(TreeNode*& n, int key)
+{
+	if (!n) 
+	{
 		n = new TreeNode(key);
 		return;
 	}
@@ -19,14 +21,16 @@ void BSTree::addKey(TreeNode*& n, int key) {
 	else if (key >= n->m_data)
 		addKey(n->m_right, key);
 }
-void BSTree::deleteBST(TreeNode*& n) {
+void BSTree::deleteBST(TreeNode*& n) 
+{
 	if (n == NULL)
 		return;
 	deleteBST(n->m_left);
 	deleteBST(n->m_right);
 	delete n;
 }
-void BSTree::removeKey(TreeNode*& n, int key) {
+void BSTree::removeKey(TreeNode*& n, int key)
+{
 	if (!n) 
 		return;
 	if (key < n->m_data)
@@ -143,7 +147,8 @@ void BSTree::sumEachLevel()
 	{
 		int size = q.size();
 		cout << "Sum each level: " << setw(2) << ++level << " => ";
-		while (size--) {
+		while (size--) 
+		{
 			TreeNode* n = q.front();
 			q.pop();
 			sum += n->m_data;
@@ -191,7 +196,8 @@ void BSTree::deleteNodeOdd(TreeNode*& n)
 	if (!n)
 		return;
 
-	if (n->m_data % 2 == 1) {
+	if (n->m_data % 2 == 1)
+	{
 		removeKey(n, n->m_data);
 		deleteNodeOdd(m_root);
 	}
